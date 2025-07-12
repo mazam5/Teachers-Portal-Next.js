@@ -8,22 +8,16 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  // useSidebar,
+  useSidebar,
 } from "@/components/ui/sidebar";
-import {
-  BookOpenCheck,
-  LayoutDashboard,
-  ShieldUser,
-  Signature,
-  Users,
-} from "lucide-react";
+import { LayoutDashboard, Users } from "lucide-react";
 import Link from "next/link";
 
 // Menu items.
 const items = [
   {
     title: "Dashboard",
-    url: "/dashboard",
+    url: "/",
     icon: LayoutDashboard,
   },
   {
@@ -31,37 +25,18 @@ const items = [
     url: "/teachers",
     icon: Users,
   },
-  {
-    title: "Leave Management",
-    url: "/leave-management",
-    icon: Signature,
-  },
-  {
-    title: "Assignments",
-    url: "/assignments",
-    icon: BookOpenCheck,
-  },
-  {
-    title: "Admin",
-    url: "/admin",
-    icon: ShieldUser,
-  },
 ];
 
 export function AppSidebar() {
-  // const SIDEBAR_WIDTH = "16rem";
-  // const SIDEBAR_WIDTH_MOBILE = "18rem";
-  // const {
-  //   state,
-  //   open,
-  //   setOpen,
-  //   openMobile,
-  //   setOpenMobile,
-  //   isMobile,
-  //   toggleSidebar,
-  // } = useSidebar();
+  const { isMobile, setOpenMobile } = useSidebar();
+
+  const handleItemClick = () => {
+    if (isMobile) {
+      setOpenMobile(false);
+    }
+  };
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="icon" className="select-none">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="mb-4 text-xs md:text-lg lg:text-xl xl:text-2xl">
@@ -71,7 +46,11 @@ export function AppSidebar() {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild className="my-1 p-1 text-lg">
+                  <SidebarMenuButton
+                    onClick={handleItemClick}
+                    asChild
+                    className="my-1 p-1 text-lg"
+                  >
                     <Link href={item.url}>
                       <item.icon size={32} />
                       <span>{item.title}</span>

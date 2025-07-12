@@ -43,7 +43,7 @@ export default function RootLayout({
               <AppSidebar />
               <div className="flex w-full flex-col">
                 <Topbar />
-                <div className="flex-grow p-4 md:overflow-y-auto md:p-8">
+                <div className="flex-grow p-3 md:overflow-y-auto md:p-4 lg:p-6 xl:p-8">
                   {children}
                 </div>
               </div>

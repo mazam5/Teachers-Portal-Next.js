@@ -1,48 +1,37 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+"use client";
+import { useTeacherStore } from "@/components/providers/teacher-store-provider";
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button";
-import { Settings, SlashIcon } from "lucide-react";
 import Link from "next/link";
+import { columns } from "./columns";
+import { DataTable } from "./data-table";
 
-const page = () => {
+const Teachers = () => {
+  const { teachers } = useTeacherStore((state) => state);
+
   return (
     <div id="teachers" className="h-full w-full">
       <div className="flex justify-between">
         <Breadcrumb>
-          <BreadcrumbList>
+          <BreadcrumbList className="text-xs md:text-lg lg:text-xl xl:text-2xl">
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/" className="text-blue-300">
+                <Link href="/teachers" className="hover:underline">
                   Teachers
                 </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbSeparator>
-              <SlashIcon />
-            </BreadcrumbSeparator>
-            <BreadcrumbItem>
-              <BreadcrumbPage>Alynia Allan</BreadcrumbPage>
-            </BreadcrumbItem>
-            <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
           </BreadcrumbList>
         </Breadcrumb>
-        <div className="">
-          <Button>
-            <Settings />
-          </Button>
-        </div>
+      </div>
+      <div>
+        <DataTable columns={columns} data={teachers} />
       </div>
     </div>
   );
 };
-export default page;
+export default Teachers;
