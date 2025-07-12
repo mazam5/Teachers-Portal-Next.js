@@ -1,10 +1,11 @@
 import { AppSidebar } from "@/components/AppSidebar";
-import { ThemeProvider } from "@/components/theme/theme-provider";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import type { Metadata } from "next";
 import { Poppins, Roboto } from "next/font/google";
 import "./globals.css";
 import Topbar from "@/components/Topbar";
+import { TeacherStoreProvider } from "@/components/providers/teacher-store-provider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -38,13 +39,15 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SidebarProvider>
-            <AppSidebar />
-            <div className="flex w-full flex-col">
-              <Topbar />
-              <div className="flex-grow p-4 md:overflow-y-auto md:p-8">
-                {children}
+            <TeacherStoreProvider>
+              <AppSidebar />
+              <div className="flex w-full flex-col">
+                <Topbar />
+                <div className="flex-grow p-4 md:overflow-y-auto md:p-8">
+                  {children}
+                </div>
               </div>
-            </div>
+            </TeacherStoreProvider>
           </SidebarProvider>
         </ThemeProvider>
       </body>

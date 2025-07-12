@@ -23,7 +23,20 @@ const Topbar = () => {
               </Avatar>
             </PopoverTrigger>
             <PopoverContent className="m-5">
-              <div className="lg:w-10% lg:h-64"></div>
+              <div className="lg:w-10% lg:h-64">
+                <div className="flex gap-4">
+                  <div>
+                    <Avatar>
+                      <AvatarImage src="https://github.com/shadcn.png" />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                  </div>
+                  <div>
+                    <h2>Richmond Hill</h2>
+                    <h3>richmondhill@edu.co.in</h3>
+                  </div>
+                </div>
+              </div>
             </PopoverContent>
           </Popover>
         </div>
