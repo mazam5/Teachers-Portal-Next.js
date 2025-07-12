@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Teachers Portal
 
-## Getting Started
+In this Next.js web application I have created a mobile-first responsive web application to manage the data about teachers for an educational society, school, college or university. This is just a frontend which has a dashboard page and list of teachers page with detailed information of a teacher.
 
-First, run the development server:
+## Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Next.js](https://nextjs.org/) - React Framework
+- [Typescript](https://www.typescriptlang.org/) - Type Safety and Logic
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-First CSS Framework
+- [Shadcn](https://ui.shadcn.com/) - Component Library for Tailwind CSS
+- [Zustand](https://zustand-demo.pmnd.rs/) - State Management
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run the below following commands on your local machine on any of the operating system Windows, Mac, Linux. (Terminal/Powershell/Command Prompt)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
 
-## Learn More
+First Install these software on your local machine
 
-To learn more about Next.js, take a look at the following resources:
+- [Node.js](https://nodejs.org/en/)
+- [Git](https://git-scm.com)
+- [VSCode](https://code.visualstudio.com/) - Optional
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    ```bash
+    git clone https://github.com/mazam5/Teachers-Portal-Next.js
+    ```
 
-## Deploy on Vercel
+2. Go to cloned directory and Install the npm packages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    cd Teachers-Portal-Next.js
+    npm install
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Run the Next.js web application.
+
+    ```bash
+    npm run dev
+   ```
