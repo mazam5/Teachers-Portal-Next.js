@@ -33,7 +33,7 @@ export function ChartComponent() {
       config={{
         count: { label: "Teachers", color: "#60a5fa" },
       }}
-      className="min-h-[200px] w-full"
+      className="min-h-[250px] w-full"
     >
       <BarChart data={chartData}>
         <CartesianGrid vertical={false} />

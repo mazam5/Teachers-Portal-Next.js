@@ -9,10 +9,10 @@ import {
   CardDescription,
   CardTitle,
 } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -63,7 +63,6 @@ export default function Home() {
         ))}
       </div>
       <Table className="mt-2 border md:mt-4 lg:mt-6 xl:mt-10">
-        <TableCaption>List of Teachers</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead>Photo</TableHead>
@@ -97,12 +96,15 @@ export default function Home() {
           ))}
         </TableBody>
       </Table>
+      <Separator />
       <div className="my-4 flex justify-center">
         <Link href="/teachers">
           <Button>Show All</Button>
         </Link>
       </div>
-      <ChartComponent />
+      <div className="h-1/5">
+        <ChartComponent />
+      </div>
     </div>
   );
 }
