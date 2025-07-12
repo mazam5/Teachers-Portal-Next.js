@@ -131,7 +131,7 @@ const Id = () => {
       </Breadcrumb>
 
       {editedTeacher ? (
-        <div className="space-y-4 rounded-2xl border bg-white p-6 shadow-md">
+        <div className="space-y-4 rounded-2xl border p-6 shadow-md">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold">
               {editedTeacher.firstName} {editedTeacher.lastName}
@@ -160,9 +160,7 @@ const Id = () => {
 
               return (
                 <div key={key}>
-                  <label className="text-muted-foreground mb-1 block">
-                    {label}
-                  </label>
+                  <label className="mb-1 block">{label}</label>
                   {isEditing ? (
                     <Input
                       value={value?.toString() ?? ""}
